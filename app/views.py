@@ -28,10 +28,10 @@ def about():
 @app.route('/profile')
 def profile():
     """Render sample user profile"""
-    return render_template('profile.html')
+    return render_template('profile.html', dateJoined = format_date_joined(datetime.date(2016, 4, 16)))
 
 def format_date_joined(date):
-    return date.strfttime("%B, %Y")
+    return date.strftime("%B, %Y")
 
 ###
 # The functions below should be applicable to all Flask apps.
